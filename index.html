@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Granite State Spring IMAC </title>
+    <link id="_w3"     rel="stylesheet" type="text/css" href="w3.css">
+    <link id="_Base"   rel="stylesheet" type="text/css" href="style.css"/>
+    <link id="Classic" rel="stylesheet" type="text/css" href="classic.css"/>
+    <link id="Steel"   rel="stylesheet" type="text/css" href="steel.css"/>
+    <link id="Lime"    rel="stylesheet" type="text/css" href="lime.css"/>
+
+    <script src="scorelib.js"></script>
+    <script>
+        init();
+
+        var pilotID = getParameterByName("id");
+        var pilotData = "No Pilot Chosen.";
+        var overallData = "";
+        var prefix;
+
+
+        function applyStyle(k) {
+            var sname = "";
+            var nStyles;
+            if (isInterim)
+                document.getElementById('watermark').style.display = "block";
+            if (isNaN(k)) {
+                if (document.styleSheets) {
+                    nStyles = document.styleSheets.length;
+                    for (var i=0;i<nStyles;i++) {
+                        sname = document.styleSheets[i].ownerNode.id;
+                        if (k===sname)                       document.styleSheets[i].disabled = false;
+                        else if ( !sname.startsWith("_"))    document.styleSheets[i].disabled = true;
+                    }
+                }
+            } else {
+                if (document.styleSheets) {
+                    nStyles = document.styleSheets.length;
+                    for (var i=0;i<nStyles;i++) {
+                        sname = document.styleSheets[i].ownerNode.id;
+                        if (i===k)                           document.styleSheets[i].disabled = false;
+                        else if (!sname.startsWith("_"))     document.styleSheets[i].disabled = true;
+                    }
+                }
+            }
+        }
+
+        function sidebar_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function sidebar_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+
+        function setClassVisibility(cls, v) {
+            var elements = document.getElementsByClassName(cls);
+            for(var i = 0; i < elements.length; i++){
+                elements[i].style.visibility = v;
+            }
+        }
+
+        function setClassDisplay(cls, d) {
+            var elements = document.getElementsByClassName(cls);
+            for(var i = 0; i < elements.length; i++){
+                elements[i].style.display = d;
+            }
+        }
+
+        function togglePercentages (ele) {
+            var d = ele.innerHTML;
+            if (d.startsWith("Hide")) {
+                ele.innerHTML = d.replace(/^Hide/, "Show");
+                //setClassVisibility("percentage", "hidden");               
+                setClassDisplay("percentage", "none");               
+            } else {
+                ele.innerHTML = d.replace(/^Show/, "Hide");
+                //setClassVisibility("percentage", "visible");
+                setClassDisplay("percentage", "block");
+            }
+        }
+
+        function openClassicPage () {
+            window.location = (prefix + "results.html");
+        }
+
+    </script>
+</head>
+<body onload='javascript:applyStyle("Lime");loadScores();'>
+<div style="display: none;" id="watermark">Interim</div>
+<div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-right" style="display:none;right:0;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" style="background-color: #A7C942;" onclick="sidebar_close()">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button" onclick="openClassicPage()">Switch to Classic view</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="applyStyle('Lime');">Enable Lime theme</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="applyStyle('Classic');">Enable Black&White theme</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="applyStyle('Steel');">Enable Steel theme</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="togglePercentages(this);">Hide Percentages</a>
+</div>
+<div id="main">
+    <div id="sidebar-button" style="float: right;"><button class="w3-button w3-teal w3-xlarge" style="background-color: #A7C942!important;" onclick="sidebar_open()">&#9776;</button></div>
+    <div id='overall'></div>
+    <div id='pilot' style='min-height: 500px;'></div>
+    <div id='log'></div>
+</div>
+</body><script>prefix = 'report_';</script>
+<script>reportTitle = 'Granite State Spring IMAC ';</script>
+<script>isInterim = false;</script>
+<script type='text/javascript'>
+
+results3obj = {
+ "type":"results",
+ "name":"Granite State Spring IMAC ",
+ "timestamp":"5-Jun-2026 19:30",
+ "region":"Northeast",
+ "sections":[
+   
+  ]
+}
+</script>
+</html>
