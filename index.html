@@ -1,0 +1,2835 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Granite State Spring IMAC </title>
+    <link id="_w3"     rel="stylesheet" type="text/css" href="w3.css">
+    <link id="_Base"   rel="stylesheet" type="text/css" href="style.css"/>
+    <link id="Classic" rel="stylesheet" type="text/css" href="classic.css"/>
+    <link id="Steel"   rel="stylesheet" type="text/css" href="steel.css"/>
+    <link id="Lime"    rel="stylesheet" type="text/css" href="lime.css"/>
+
+    <script src="scorelib.js"></script>
+    <script>
+        init();
+
+        var pilotID = getParameterByName("id");
+        var pilotData = "No Pilot Chosen.";
+        var overallData = "";
+        var prefix;
+
+
+        function applyStyle(k) {
+            var sname = "";
+            var nStyles;
+            if (isInterim)
+                document.getElementById('watermark').style.display = "block";
+            if (isNaN(k)) {
+                if (document.styleSheets) {
+                    nStyles = document.styleSheets.length;
+                    for (var i=0;i<nStyles;i++) {
+                        sname = document.styleSheets[i].ownerNode.id;
+                        if (k===sname)                       document.styleSheets[i].disabled = false;
+                        else if ( !sname.startsWith("_"))    document.styleSheets[i].disabled = true;
+                    }
+                }
+            } else {
+                if (document.styleSheets) {
+                    nStyles = document.styleSheets.length;
+                    for (var i=0;i<nStyles;i++) {
+                        sname = document.styleSheets[i].ownerNode.id;
+                        if (i===k)                           document.styleSheets[i].disabled = false;
+                        else if (!sname.startsWith("_"))     document.styleSheets[i].disabled = true;
+                    }
+                }
+            }
+        }
+
+        function sidebar_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function sidebar_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+
+        function setClassVisibility(cls, v) {
+            var elements = document.getElementsByClassName(cls);
+            for(var i = 0; i < elements.length; i++){
+                elements[i].style.visibility = v;
+            }
+        }
+
+        function setClassDisplay(cls, d) {
+            var elements = document.getElementsByClassName(cls);
+            for(var i = 0; i < elements.length; i++){
+                elements[i].style.display = d;
+            }
+        }
+
+        function togglePercentages (ele) {
+            var d = ele.innerHTML;
+            if (d.startsWith("Hide")) {
+                ele.innerHTML = d.replace(/^Hide/, "Show");
+                //setClassVisibility("percentage", "hidden");               
+                setClassDisplay("percentage", "none");               
+            } else {
+                ele.innerHTML = d.replace(/^Show/, "Hide");
+                //setClassVisibility("percentage", "visible");
+                setClassDisplay("percentage", "block");
+            }
+        }
+
+        function openClassicPage () {
+            window.location = (prefix + "results.html");
+        }
+
+    </script>
+</head>
+<body onload='javascript:applyStyle("Lime");loadScores();'>
+<div style="display: none;" id="watermark">Interim</div>
+<div class="w3-sidebar w3-bar-block w3-card-2 w3-animate-right" style="display:none;right:0;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large" style="background-color: #A7C942;" onclick="sidebar_close()">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button" onclick="openClassicPage()">Switch to Classic view</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="applyStyle('Lime');">Enable Lime theme</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="applyStyle('Classic');">Enable Black&White theme</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="applyStyle('Steel');">Enable Steel theme</a>
+  <a href="#" class="w3-bar-item w3-button" onclick="togglePercentages(this);">Hide Percentages</a>
+</div>
+<div id="main">
+    <div id="sidebar-button" style="float: right;"><button class="w3-button w3-teal w3-xlarge" style="background-color: #A7C942!important;" onclick="sidebar_open()">&#9776;</button></div>
+    <div id='overall'></div>
+    <div id='pilot' style='min-height: 500px;'></div>
+    <div id='log'></div>
+</div>
+</body><script>prefix = 'report_';</script>
+<script>reportTitle = 'Granite State Spring IMAC ';</script>
+<script>isInterim = false;</script>
+<script type='text/javascript'>
+
+pilotsobj["2396"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"Peter Nesbeda",
+ "pilot_id":"2396",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"",
+ "pilot_mpp":"false",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"ADVANCED",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"2396",
+ "pilot_imac_number":"2396",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"2779.5","score":"2779.5",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"7.5" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"6.5" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"7.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"7.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"7.0" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"7.5" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"7.0" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"8.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"7.0" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"6.0" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"9.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"2351.5","score":"2351.5",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"7.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"7.0" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"7.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"7.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"5.5" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"6.0" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"2.0" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"0.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"7.0" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"7.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"2380.5","score":"2380.5",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"7.5" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"5.0" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"2.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"5.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"5.5" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"4.5" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"5.5" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"8.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"7.5" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"9.0" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"1943.0","score":"1943.0",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"4.5" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"0.0" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"6.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"0.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"7.5" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"5.0" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"6.5" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"7.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"7.5" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"8.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1582.0","score":"1582.0",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"2.5" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"5.5" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"2.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"6.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"2.5" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"5.0" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"0.0" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"0.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"7.0" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"3.0" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"9.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"1075.0","penalty":"70.0","score":"1005.0",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"2.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"4.0" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"4.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"1.5" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"1.0" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"0.0" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"0.0" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","break_flag":"true","score":"0.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"6.5" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"4.5" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"6.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"2849.0","score":"2849.0",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"7.5" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"7.0" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"5.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"5.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"6.0" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"6.5" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"7.5" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"9.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"9.5" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"9.5" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"9.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"2225.5","score":"2225.5",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"6.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"0.0" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"6.5" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"0.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"7.0" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"8.0" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"6.0" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"9.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"8.0" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"10.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+pilotsobj["6571"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"Tyler McCormack",
+ "pilot_id":"6571",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"",
+ "pilot_mpp":"false",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"UNLIMITED",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"6571",
+ "pilot_imac_number":"6571",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"4034.0","score":"4034.0",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"9.0" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"9.0" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"7.5" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"8.5" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"7.0" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"9.5" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"7.5" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"8.0" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"8.0" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"10.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"3911.0","score":"3911.0",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"8.0" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"8.0" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"8.5" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"7.5" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"7.5" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"7.5" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"8.0" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"9.0" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"7.5" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"9.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"3973.5","score":"3973.5",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"9.5" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"8.5" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"8.5" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"7.0" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"8.5" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"7.5" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"7.5" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"7.5" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"7.5" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"3928.0","score":"3928.0",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"7.0" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"8.0" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"9.0" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"6.5" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"8.0" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"9.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"8.0" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"9.0" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"7.5" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"6.5" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"10.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"4210.5","score":"4210.5",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"8.5" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"9.5" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"9.0" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"8.0" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"8.0" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"9.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"9.0" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"9.0" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"8.0" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"8.0" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"8.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"4158.5","score":"4158.5",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"9.0" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"9.0" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"7.0" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"9.0" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"8.0" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"8.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"8.0" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"9.5" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"8.5" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"9.0" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"4311.5","score":"4311.5",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"9.5" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"8.5" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"9.0" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"9.0" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"9.0" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"9.5" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"9.5" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"8.0" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"8.5" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"8.0" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"4199.0","score":"4199.0",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"9.5" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"8.5" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"9.0" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"9.0" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"7.0" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"9.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"9.0" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"8.0" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"8.5" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"8.0" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"8.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+pilotsobj["7970"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"Steve Bakke",
+ "pilot_id":"7970",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"",
+ "pilot_mpp":"false",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"ADVANCED",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"7970",
+ "pilot_imac_number":"7970",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"2843.0","score":"2843.0",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"6.5" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"7.5" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"8.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"8.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"7.0" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"7.0" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"7.0" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"8.5" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"7.0" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"8.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"2881.0","score":"2881.0",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"7.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"7.0" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"8.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"8.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"6.0" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"7.5" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"7.0" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"8.5" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"8.0" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"2889.5","score":"2889.5",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"7.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"6.5" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"6.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"8.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"7.0" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"7.5" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"7.5" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"9.5" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"8.0" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"7.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"2932.0","score":"2932.0",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"6.5" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"6.0" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"8.5" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"8.5" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"6.0" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"7.0" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"9.0" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"9.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"7.5" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"8.0" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"8.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"2226.0","score":"2226.0",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"6.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"5.0" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"8.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"6.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"4.0" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"6.0" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"3.5" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"0.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"6.0" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"9.5" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"7.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"2260.5","score":"2260.5",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"4.5" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"9.0" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"7.0" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"7.5" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"0.0" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"7.0" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"3.0" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"5.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"5.5" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"3239.5","score":"3239.5",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"9.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"8.0" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"8.5" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"8.0" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"8.0" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"8.5" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"8.0" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"9.0" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"7.5" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"9.0" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"3182.0","score":"3182.0",
+        "figures":[
+        { "index":"0","desc":"Reverse P-Loop","k_factor":"45","score":"9.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"39","score":"7.5" },
+        { "index":"2","desc":"Loop","k_factor":"22","score":"8.5" },
+        { "index":"3","desc":"Hammerhead","k_factor":"47","score":"9.5" },
+        { "index":"4","desc":"270 Degree Rolling Turn","k_factor":"30","score":"6.5" },
+        { "index":"5","desc":"Double Humpty Bump","k_factor":"43","score":"7.0" },
+        { "index":"6","desc":"Down Reverse Half Cuban","k_factor":"41","score":"8.0" },
+        { "index":"7","desc":"Spin Entry Vertical Down Line","k_factor":"17","score":"9.5" },
+        { "index":"8","desc":"Reverse Teardrop","k_factor":"48","score":"7.0" },
+        { "index":"9","desc":"Tooth","k_factor":"33","score":"9.5" },
+        { "index":"10","desc":"Sound","k_factor":"12","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"12","score":"10.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+pilotsobj["8134"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"Seth Dixon",
+ "pilot_id":"8134",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"",
+ "pilot_mpp":"false",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"UNLIMITED",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"8134",
+ "pilot_imac_number":"8134",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"4002.5","score":"4002.5",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"8.5" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"9.0" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"9.5" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"6.5" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"6.5" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"9.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"8.5" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"8.5" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"7.5" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"6.5" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"10.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"4058.0","score":"4058.0",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"8.5" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"8.5" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"9.5" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"6.0" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"7.5" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"9.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"10.0" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"8.0" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"7.5" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"2607.5","score":"2607.5",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"8.5" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"9.0" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"9.0" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"8.0" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"8.0" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"8.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"0.0" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"0.0" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"0.0" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"0.0" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"10.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"4105.0","score":"4105.0",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"8.0" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"10.0" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"9.0" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"8.0" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"9.0" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"9.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"8.0" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"8.0" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"8.0" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"8.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"3964.0","score":"3964.0",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"7.0" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"9.0" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"7.0" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"8.0" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"9.0" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"8.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"8.0" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"9.0" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"9.0" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"2630.5","score":"2630.5",
+        "figures":[
+        { "index":"0","desc":"Down Horizontal S","k_factor":"55","score":"9.5" },
+        { "index":"1","desc":"Hammerhead","k_factor":"50","score":"8.5" },
+        { "index":"2","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"54","score":"8.0" },
+        { "index":"3","desc":"Immelman","k_factor":"46","score":"9.0" },
+        { "index":"4","desc":"Down Loop","k_factor":"36","score":"8.0" },
+        { "index":"5","desc":"Spin Entry Vertical Down Line","k_factor":"31","score":"9.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"50","score":"0.0" },
+        { "index":"7","desc":"Tooth","k_factor":"52","score":"0.0" },
+        { "index":"8","desc":"Teardrop","k_factor":"51","score":"0.0" },
+        { "index":"9","desc":"270 Degree Rolling Turn","k_factor":"37","score":"0.0" },
+        { "index":"10","desc":"Sound","k_factor":"15","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"15","score":"10.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+pilotsobj["8453"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"Andy Dixon",
+ "pilot_id":"8453",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"Carden Extra 300",
+ "pilot_mpp":"false",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"SPORTSMAN",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"8453",
+ "pilot_imac_number":"8453",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1625.5","score":"1625.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"7.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"7.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"5.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"6.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"6.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"7.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"7.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"6.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"5.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"7.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"1748.0","score":"1748.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"7.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"6.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"7.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"6.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"7.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"6.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"10.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"1067.5","score":"1067.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"6.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"5.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"6.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"7.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"2.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"4.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"0.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"5.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"6.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"7.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"1417.5","score":"1417.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"9.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"4.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"8.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"3.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"3.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"6.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"4.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"7.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"5.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"8.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1936.5","score":"1936.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"7.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"7.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"5.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"8.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"2029.0","score":"2029.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"8.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"7.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"7.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"2080.5","score":"2080.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"7.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"8.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"2084.0","score":"2084.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"9.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"9.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"8.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+pilotsobj["8598"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"John Nye",
+ "pilot_id":"8598",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"",
+ "pilot_mpp":"false",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"SPORTSMAN",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"8598",
+ "pilot_imac_number":"8598",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1598.5","score":"1598.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"7.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"4.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"5.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"7.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"5.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"6.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"7.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"1459.0","score":"1459.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"7.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"7.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"4.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"0.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"6.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"8.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"6.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"1294.0","score":"1294.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"2.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"6.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"0.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"7.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"9.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"5.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"7.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"6.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"5.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"1398.5","score":"1398.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"3.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"5.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"7.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"0.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"5.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"4.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"7.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1982.5","score":"1982.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"7.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"8.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"9.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"7.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"7.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"7.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"9.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"9.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"1768.0","score":"1768.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"8.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"7.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"6.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"7.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"1859.0","score":"1859.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"7.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"7.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"1731.0","score":"1731.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"7.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"0.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"5.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"7.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+pilotsobj["8619"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"John Lavery",
+ "pilot_id":"8619",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"Edge",
+ "pilot_mpp":"",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"BASIC",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"8619",
+ "pilot_imac_number":"8619",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1005.0","score":"1005.0",
+        "figures":[
+        { "index":"0","desc":"Loop","k_factor":"10","score":"7.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"16","score":"8.0" },
+        { "index":"2","desc":"Horizontal Line","k_factor":"10","score":"7.0" },
+        { "index":"3","desc":"Immelman","k_factor":"10","score":"8.0" },
+        { "index":"4","desc":"Diagonal Down Line","k_factor":"7","score":"9.0" },
+        { "index":"5","desc":"Hammerhead","k_factor":"17","score":"7.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"25","score":"3.0" },
+        { "index":"7","desc":"Vertical Up Line","k_factor":"18","score":"8.0" },
+        { "index":"8","desc":"Spin Entry Down Shark Tooth","k_factor":"18","score":"7.0" },
+        { "index":"9","desc":"Split-S","k_factor":"10","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"3","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"3","score":"10.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"949.0","score":"949.0",
+        "figures":[
+        { "index":"0","desc":"Loop","k_factor":"10","score":"5.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"16","score":"7.0" },
+        { "index":"2","desc":"Horizontal Line","k_factor":"10","score":"5.0" },
+        { "index":"3","desc":"Immelman","k_factor":"10","score":"8.0" },
+        { "index":"4","desc":"Diagonal Down Line","k_factor":"7","score":"8.0" },
+        { "index":"5","desc":"Hammerhead","k_factor":"17","score":"6.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"25","score":"5.0" },
+        { "index":"7","desc":"Vertical Up Line","k_factor":"18","score":"8.0" },
+        { "index":"8","desc":"Spin Entry Down Shark Tooth","k_factor":"18","score":"5.0" },
+        { "index":"9","desc":"Split-S","k_factor":"10","score":"8.0" },
+        { "index":"10","desc":"Sound","k_factor":"3","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"3","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"1149.0","score":"1149.0",
+        "figures":[
+        { "index":"0","desc":"Loop","k_factor":"10","score":"8.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"16","score":"8.0" },
+        { "index":"2","desc":"Horizontal Line","k_factor":"10","score":"8.0" },
+        { "index":"3","desc":"Immelman","k_factor":"10","score":"9.5" },
+        { "index":"4","desc":"Diagonal Down Line","k_factor":"7","score":"9.0" },
+        { "index":"5","desc":"Hammerhead","k_factor":"17","score":"9.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"25","score":"7.0" },
+        { "index":"7","desc":"Vertical Up Line","k_factor":"18","score":"10.0" },
+        { "index":"8","desc":"Spin Entry Down Shark Tooth","k_factor":"18","score":"8.0" },
+        { "index":"9","desc":"Split-S","k_factor":"10","score":"0.0" },
+        { "index":"10","desc":"Sound","k_factor":"3","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"3","score":"9.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"969.5","score":"969.5",
+        "figures":[
+        { "index":"0","desc":"Loop","k_factor":"10","not_observed_flag":"true","score":"9.5" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"16","not_observed_flag":"true","score":"9.0" },
+        { "index":"2","desc":"Horizontal Line","k_factor":"10","not_observed_flag":"true","score":"9.5" },
+        { "index":"3","desc":"Immelman","k_factor":"10","not_observed_flag":"true","score":"8.5" },
+        { "index":"4","desc":"Diagonal Down Line","k_factor":"7","not_observed_flag":"true","score":"9.5" },
+        { "index":"5","desc":"Hammerhead","k_factor":"17","not_observed_flag":"true","score":"8.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"25","not_observed_flag":"true","score":"0.0" },
+        { "index":"7","desc":"Vertical Up Line","k_factor":"18","not_observed_flag":"true","score":"8.0" },
+        { "index":"8","desc":"Spin Entry Down Shark Tooth","k_factor":"18","not_observed_flag":"true","score":"8.0" },
+        { "index":"9","desc":"Split-S","k_factor":"10","not_observed_flag":"true","score":"0.0" },
+        { "index":"10","desc":"Sound","k_factor":"3","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"3","score":"10.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1014.0","score":"1014.0",
+        "figures":[
+        { "index":"0","desc":"Loop","k_factor":"10","score":"5.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"16","score":"9.0" },
+        { "index":"2","desc":"Horizontal Line","k_factor":"10","score":"8.0" },
+        { "index":"3","desc":"Immelman","k_factor":"10","score":"9.0" },
+        { "index":"4","desc":"Diagonal Down Line","k_factor":"7","score":"9.0" },
+        { "index":"5","desc":"Hammerhead","k_factor":"17","score":"5.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"25","score":"6.0" },
+        { "index":"7","desc":"Vertical Up Line","k_factor":"18","score":"9.0" },
+        { "index":"8","desc":"Spin Entry Down Shark Tooth","k_factor":"18","score":"4.0" },
+        { "index":"9","desc":"Split-S","k_factor":"10","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"3","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"3","score":"9.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"930.0","score":"930.0",
+        "figures":[
+        { "index":"0","desc":"Loop","k_factor":"10","score":"9.5" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"16","score":"7.5" },
+        { "index":"2","desc":"Horizontal Line","k_factor":"10","score":"6.0" },
+        { "index":"3","desc":"Immelman","k_factor":"10","score":"7.0" },
+        { "index":"4","desc":"Diagonal Down Line","k_factor":"7","score":"9.0" },
+        { "index":"5","desc":"Hammerhead","k_factor":"17","score":"5.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"25","score":"4.0" },
+        { "index":"7","desc":"Vertical Up Line","k_factor":"18","score":"8.0" },
+        { "index":"8","desc":"Spin Entry Down Shark Tooth","k_factor":"18","score":"4.0" },
+        { "index":"9","desc":"Split-S","k_factor":"10","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"3","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"3","score":"9.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"1031.5","score":"1031.5",
+        "figures":[
+        { "index":"0","desc":"Loop","k_factor":"10","score":"9.0" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"16","score":"8.0" },
+        { "index":"2","desc":"Horizontal Line","k_factor":"10","score":"9.0" },
+        { "index":"3","desc":"Immelman","k_factor":"10","score":"10.0" },
+        { "index":"4","desc":"Diagonal Down Line","k_factor":"7","score":"9.0" },
+        { "index":"5","desc":"Hammerhead","k_factor":"17","score":"7.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"25","score":"9.5" },
+        { "index":"7","desc":"Vertical Up Line","k_factor":"18","score":"8.5" },
+        { "index":"8","desc":"Spin Entry Down Shark Tooth","k_factor":"18","score":"0.0" },
+        { "index":"9","desc":"Split-S","k_factor":"10","score":"0.0" },
+        { "index":"10","desc":"Sound","k_factor":"3","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"3","score":"7.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"954.5","score":"954.5",
+        "figures":[
+        { "index":"0","desc":"Loop","k_factor":"10","score":"9.5" },
+        { "index":"1","desc":"Reverse Half Cuban","k_factor":"16","score":"9.0" },
+        { "index":"2","desc":"Horizontal Line","k_factor":"10","score":"9.5" },
+        { "index":"3","desc":"Immelman","k_factor":"10","score":"8.5" },
+        { "index":"4","desc":"Diagonal Down Line","k_factor":"7","score":"9.5" },
+        { "index":"5","desc":"Hammerhead","k_factor":"17","score":"8.0" },
+        { "index":"6","desc":"Humpty Bump","k_factor":"25","score":"0.0" },
+        { "index":"7","desc":"Vertical Up Line","k_factor":"18","score":"8.0" },
+        { "index":"8","desc":"Spin Entry Down Shark Tooth","k_factor":"18","score":"8.0" },
+        { "index":"9","desc":"Split-S","k_factor":"10","score":"0.0" },
+        { "index":"10","desc":"Sound","k_factor":"3","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"3","score":"7.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+pilotsobj["8749"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"John Eppling",
+ "pilot_id":"8749",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"AJ Laser 230Z",
+ "pilot_mpp":"false",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"SPORTSMAN",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"8749",
+ "pilot_imac_number":"8749",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1692.0","score":"1692.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"9.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"5.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"5.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"8.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"6.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"6.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"8.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"1630.5","score":"1630.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"7.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"0.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"7.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"7.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"6.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"1370.0","score":"1370.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"7.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"5.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"7.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"3.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"5.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"4.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"5.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"1429.0","score":"1429.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"6.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"6.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"4.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"7.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"9.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"5.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"2.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"10.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"3.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"7.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1915.0","score":"1915.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"6.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"7.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"7.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"2110.0","score":"2110.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"9.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"8.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"9.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"2121.5","score":"2121.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"8.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"9.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"9.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"8.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"2209.5","score":"2209.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"9.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"9.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"8.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"9.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"9.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"9.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"8.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+pilotsobj["8769"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"Mike Maljanian",
+ "pilot_id":"8769",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"EF 260",
+ "pilot_mpp":"false",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"INTERMEDIATE",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"8769",
+ "pilot_imac_number":"8769",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"2041.0","score":"2041.0",
+        "figures":[
+        { "index":"0","desc":"N Figure","k_factor":"25","score":"6.0" },
+        { "index":"1","desc":"Down Diagonal Bump","k_factor":"30","score":"8.0" },
+        { "index":"2","desc":"Down Reverse Half Cuban","k_factor":"34","score":"3.0" },
+        { "index":"3","desc":"Spin Entry Vertical Down Line","k_factor":"19","score":"8.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Exit","k_factor":"42","score":"6.0" },
+        { "index":"5","desc":"Reverse Q-Loop","k_factor":"42","score":"5.0" },
+        { "index":"6","desc":"Double Humpty Bump","k_factor":"42","score":"7.0" },
+        { "index":"7","desc":"Vertical Down Line","k_factor":"16","score":"8.0" },
+        { "index":"8","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"38","score":"6.0" },
+        { "index":"9","desc":"90 Degree Rolling Turn","k_factor":"15","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"9","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"9","score":"10.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"2281.0","score":"2281.0",
+        "figures":[
+        { "index":"0","desc":"N Figure","k_factor":"25","score":"7.0" },
+        { "index":"1","desc":"Down Diagonal Bump","k_factor":"30","score":"7.0" },
+        { "index":"2","desc":"Down Reverse Half Cuban","k_factor":"34","score":"7.0" },
+        { "index":"3","desc":"Spin Entry Vertical Down Line","k_factor":"19","score":"7.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Exit","k_factor":"42","score":"5.5" },
+        { "index":"5","desc":"Reverse Q-Loop","k_factor":"42","score":"6.5" },
+        { "index":"6","desc":"Double Humpty Bump","k_factor":"42","score":"8.5" },
+        { "index":"7","desc":"Vertical Down Line","k_factor":"16","score":"8.0" },
+        { "index":"8","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"38","score":"7.0" },
+        { "index":"9","desc":"90 Degree Rolling Turn","k_factor":"15","score":"6.0" },
+        { "index":"10","desc":"Sound","k_factor":"9","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"9","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"2653.5","score":"2653.5",
+        "figures":[
+        { "index":"0","desc":"N Figure","k_factor":"25","score":"9.0" },
+        { "index":"1","desc":"Down Diagonal Bump","k_factor":"30","score":"0.0" },
+        { "index":"2","desc":"Down Reverse Half Cuban","k_factor":"34","score":"9.5" },
+        { "index":"3","desc":"Spin Entry Vertical Down Line","k_factor":"19","score":"9.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Exit","k_factor":"42","score":"9.0" },
+        { "index":"5","desc":"Reverse Q-Loop","k_factor":"42","score":"8.5" },
+        { "index":"6","desc":"Double Humpty Bump","k_factor":"42","score":"9.0" },
+        { "index":"7","desc":"Vertical Down Line","k_factor":"16","score":"8.5" },
+        { "index":"8","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"38","score":"9.5" },
+        { "index":"9","desc":"90 Degree Rolling Turn","k_factor":"15","score":"9.0" },
+        { "index":"10","desc":"Sound","k_factor":"9","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"9","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"2760.0","score":"2760.0",
+        "figures":[
+        { "index":"0","desc":"N Figure","k_factor":"25","not_observed_flag":"true","score":"9.0" },
+        { "index":"1","desc":"Down Diagonal Bump","k_factor":"30","score":"9.5" },
+        { "index":"2","desc":"Down Reverse Half Cuban","k_factor":"34","score":"9.0" },
+        { "index":"3","desc":"Spin Entry Vertical Down Line","k_factor":"19","score":"9.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Exit","k_factor":"42","score":"8.0" },
+        { "index":"5","desc":"Reverse Q-Loop","k_factor":"42","score":"7.5" },
+        { "index":"6","desc":"Double Humpty Bump","k_factor":"42","score":"8.5" },
+        { "index":"7","desc":"Vertical Down Line","k_factor":"16","score":"9.0" },
+        { "index":"8","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"38","score":"8.0" },
+        { "index":"9","desc":"90 Degree Rolling Turn","k_factor":"15","score":"8.5" },
+        { "index":"10","desc":"Sound","k_factor":"9","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"9","score":"10.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"2128.5","score":"2128.5",
+        "figures":[
+        { "index":"0","desc":"N Figure","k_factor":"25","score":"7.5" },
+        { "index":"1","desc":"Down Diagonal Bump","k_factor":"30","score":"6.5" },
+        { "index":"2","desc":"Down Reverse Half Cuban","k_factor":"34","score":"2.5" },
+        { "index":"3","desc":"Spin Entry Vertical Down Line","k_factor":"19","score":"9.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Exit","k_factor":"42","score":"8.0" },
+        { "index":"5","desc":"Reverse Q-Loop","k_factor":"42","score":"6.0" },
+        { "index":"6","desc":"Double Humpty Bump","k_factor":"42","score":"7.0" },
+        { "index":"7","desc":"Vertical Down Line","k_factor":"16","score":"8.0" },
+        { "index":"8","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"38","score":"6.0" },
+        { "index":"9","desc":"90 Degree Rolling Turn","k_factor":"15","score":"6.0" },
+        { "index":"10","desc":"Sound","k_factor":"9","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"9","score":"10.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"2314.5","score":"2314.5",
+        "figures":[
+        { "index":"0","desc":"N Figure","k_factor":"25","score":"6.5" },
+        { "index":"1","desc":"Down Diagonal Bump","k_factor":"30","score":"6.0" },
+        { "index":"2","desc":"Down Reverse Half Cuban","k_factor":"34","score":"9.0" },
+        { "index":"3","desc":"Spin Entry Vertical Down Line","k_factor":"19","score":"9.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Exit","k_factor":"42","score":"6.5" },
+        { "index":"5","desc":"Reverse Q-Loop","k_factor":"42","score":"5.5" },
+        { "index":"6","desc":"Double Humpty Bump","k_factor":"42","score":"6.5" },
+        { "index":"7","desc":"Vertical Down Line","k_factor":"16","score":"8.0" },
+        { "index":"8","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"38","score":"8.5" },
+        { "index":"9","desc":"90 Degree Rolling Turn","k_factor":"15","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"9","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"9","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"2819.5","score":"2819.5",
+        "figures":[
+        { "index":"0","desc":"N Figure","k_factor":"25","score":"9.0" },
+        { "index":"1","desc":"Down Diagonal Bump","k_factor":"30","score":"8.0" },
+        { "index":"2","desc":"Down Reverse Half Cuban","k_factor":"34","score":"8.5" },
+        { "index":"3","desc":"Spin Entry Vertical Down Line","k_factor":"19","score":"9.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Exit","k_factor":"42","score":"8.5" },
+        { "index":"5","desc":"Reverse Q-Loop","k_factor":"42","score":"9.5" },
+        { "index":"6","desc":"Double Humpty Bump","k_factor":"42","score":"8.5" },
+        { "index":"7","desc":"Vertical Down Line","k_factor":"16","score":"8.5" },
+        { "index":"8","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"38","score":"8.5" },
+        { "index":"9","desc":"90 Degree Rolling Turn","k_factor":"15","score":"9.5" },
+        { "index":"10","desc":"Sound","k_factor":"9","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"9","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"2870.0","score":"2870.0",
+        "figures":[
+        { "index":"0","desc":"N Figure","k_factor":"25","score":"9.0" },
+        { "index":"1","desc":"Down Diagonal Bump","k_factor":"30","score":"9.0" },
+        { "index":"2","desc":"Down Reverse Half Cuban","k_factor":"34","score":"8.5" },
+        { "index":"3","desc":"Spin Entry Vertical Down Line","k_factor":"19","score":"9.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Exit","k_factor":"42","score":"9.0" },
+        { "index":"5","desc":"Reverse Q-Loop","k_factor":"42","score":"9.0" },
+        { "index":"6","desc":"Double Humpty Bump","k_factor":"42","score":"9.0" },
+        { "index":"7","desc":"Vertical Down Line","k_factor":"16","score":"9.0" },
+        { "index":"8","desc":"Z-Entry Diagonal Humpty Bump","k_factor":"38","score":"9.5" },
+        { "index":"9","desc":"90 Degree Rolling Turn","k_factor":"15","score":"7.0" },
+        { "index":"10","desc":"Sound","k_factor":"9","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"9","score":"10.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+pilotsobj["8779"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"Ray Breton",
+ "pilot_id":"8779",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"",
+ "pilot_mpp":"false",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"SPORTSMAN",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"8779",
+ "pilot_imac_number":"8779",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1613.0","score":"1613.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"6.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"6.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"4.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"5.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"7.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"6.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"7.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"1694.0","score":"1694.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"5.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"6.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"5.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"8.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"7.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"1080.5","score":"1080.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"7.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"2.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"5.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"3.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"4.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"3.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"7.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"4.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"7.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"1152.5","penalty":"20.0","score":"1132.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"6.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"5.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"6.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","break_flag":"true","score":"0.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"0.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"6.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"6.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"3.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"6.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"6.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1794.0","score":"1794.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"6.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"1961.5","score":"1961.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"4.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"6.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"8.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"1820.0","score":"1820.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"6.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"7.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"7.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"1507.5","penalty":"20.0","score":"1487.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"7.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"7.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","break_flag":"true","score":"0.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"7.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"6.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"6.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"6.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+pilotsobj["8970"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"Michael Miller",
+ "pilot_id":"8970",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"Aeroworks Edge 540",
+ "pilot_mpp":"false",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"SPORTSMAN",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"8970",
+ "pilot_imac_number":"8970",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"1800.5","score":"1800.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"9.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"6.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"7.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"7.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"6.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"6.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"8.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"1514.0","score":"1514.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"6.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"6.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"6.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"6.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"7.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"0.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"7.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"6.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"1465.5","score":"1465.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"5.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"6.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"5.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"3.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"1.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"4.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"8.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"8.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"1505.5","score":"1505.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"6.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"6.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"8.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"2.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"2.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"2.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"7.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"7.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"8.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"2174.0","score":"2174.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"9.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"9.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"9.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"8.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"9.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"2051.5","score":"2051.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"8.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"2054.0","score":"2054.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"7.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"8.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"7.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"9.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"2039.0","score":"2039.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"9.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"8.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"9.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.5" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"7.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"6.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"8.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"8.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+pilotsobj["9447"] = {
+ "contest_name":"Granite State Spring IMAC ",
+ "type":"Pilot Report",
+ "timestamp":"6-Jun-2026 14:06",
+ "pilot_name":"Dan Weed",
+ "pilot_id":"9447",
+ "pilot_address1":"",
+ "pilot_address2":"",
+ "pilot_airplane":"PAU Extra 330LX",
+ "pilot_mpp":"false",
+ "pilot_active":"true",
+ "pilot_freestyle":"false",
+ "pilot_class":"SPORTSMAN",
+ "pilot_frequency":"SS",
+ "pilot_ama_number":"9447",
+ "pilot_imac_number":"9447",
+ "sections":[
+   
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"1",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"583.0","penalty":"20.0","score":"563.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"4.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","break_flag":"true","score":"0.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"0.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"5.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"0.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"6.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"0.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"0.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"0.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"6.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"1265.5","score":"1265.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"5.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"4.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"6.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"7.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"3.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"0.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"5.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"7.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"6.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"6.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"7.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"7.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"688.5","score":"688.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"2.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"4.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"1.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"0.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"4.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"4.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"0.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"3.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"6.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"767.5","score":"767.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"2.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"4.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"0.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"6.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"0.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"3.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"7.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"3.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"6.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"8.0" }
+        ]
+      }
+    ]
+  }, 
+  { "type":"KNOWN",
+    "start_round":"1",
+    "end_round":"2",
+    "judge_sheet":"2",
+    "flights":[
+      
+      { "round":"1","sequence":"1","ksum":"776.0","score":"776.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"9.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"0.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"0.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"0.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"5.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"6.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"5.5" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"4.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"0.0" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"0.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"1","sequence":"2","ksum":"1351.0","score":"1351.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"6.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"5.5" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"7.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"6.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"7.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"0.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"6.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"5.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"9.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"9.0" }
+        ]
+      },
+      { "round":"2","sequence":"1","ksum":"1337.0","score":"1337.0",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"7.5" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"7.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"6.0" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"6.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"5.5" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"7.0" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"0.0" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"8.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"6.0" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      },
+      { "round":"2","sequence":"2","ksum":"1494.5","score":"1494.5",
+        "figures":[
+        { "index":"0","desc":"Q-Loop","k_factor":"19","score":"8.0" },
+        { "index":"1","desc":"Bow","k_factor":"30","score":"7.0" },
+        { "index":"2","desc":"Down Humpty Bump","k_factor":"31","score":"6.5" },
+        { "index":"3","desc":"Split-S","k_factor":"21","score":"8.0" },
+        { "index":"4","desc":"Hammerhead With Diagonal Entry","k_factor":"30","score":"0.0" },
+        { "index":"5","desc":"Goldfish","k_factor":"21","score":"8.5" },
+        { "index":"6","desc":"Spin Entry Down Humpty Bump","k_factor":"17","score":"0.0" },
+        { "index":"7","desc":"Down Shark Tooth","k_factor":"27","score":"7.5" },
+        { "index":"8","desc":"180 Degree Aerobatic Turn","k_factor":"5","score":"9.5" },
+        { "index":"9","desc":"Down N Figure","k_factor":"33","score":"6.5" },
+        { "index":"10","desc":"Sound","k_factor":"6","score":"10.0" },
+        { "index":"11","desc":"Airspace Control","k_factor":"6","score":"10.0" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+<script type='text/javascript'>
+
+results3obj = {
+ "type":"results",
+ "name":"Granite State Spring IMAC ",
+ "timestamp":"6-Jun-2026 14:06",
+ "region":"Northeast",
+ "sections":[
+   
+  { "class":"Basic",
+    "rows":[
+      
+      {
+        "name":"John Lavery",
+        "id":"8619",
+        "s_perc":"69.427",
+        "s_scaled":"3000.0",
+        "s_percknown":"69.427",
+        "s_percunknown":"",
+        "points":"1000.0",
+        "rank":"1",
+        "index":"8619",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"68.673",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"true",
+          "percthrown":"true",
+          "s_perc":"63.912",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"74.167",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"65.442",
+          "s_scaled":"1000.0" }
+        ]
+      }
+    ]
+  }, 
+  { "class":"Sportsman",
+    "rows":[
+      
+      {
+        "name":"John Eppling",
+        "id":"8749",
+        "s_perc":"74.431",
+        "s_scaled":"2982.3805701755527",
+        "s_percknown":"74.431",
+        "s_percunknown":"",
+        "points":"1000.0",
+        "rank":"1",
+        "index":"8749",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"true",
+          "percthrown":"false",
+          "s_perc":"73.313",
+          "s_scaled":"907.5355390615172" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"76.026",
+          "s_scaled":"990.3362456976436" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"true",
+          "s_perc":"70.965",
+          "s_scaled":"992.044324477909" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"73.953",
+          "s_scaled":"1000.0" }
+        ]
+      },
+      {
+        "name":"Michael Miller",
+        "id":"8970",
+        "s_perc":"75.098",
+        "s_scaled":"2974.1651779579497",
+        "s_percknown":"75.098",
+        "s_percunknown":"",
+        "points":"997.245357517495",
+        "rank":"2",
+        "index":"8970",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"80.783",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"true",
+          "percthrown":"false",
+          "s_perc":"72.470",
+          "s_scaled":"944.0031771247021" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"true",
+          "s_perc":"71.535",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"72.043",
+          "s_scaled":"974.1651779579498" }
+        ]
+      },
+      {
+        "name":"Andy Dixon",
+        "id":"8453",
+        "s_perc":"73.445",
+        "s_scaled":"2858.560481237464",
+        "s_percknown":"73.445",
+        "s_percunknown":"",
+        "points":"958.4828005599566",
+        "rank":"3",
+        "index":"8453",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"72.398",
+          "s_scaled":"896.2133601710907" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"76.768",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"true",
+          "percthrown":"true",
+          "s_perc":"63.984",
+          "s_scaled":"894.4452336979685" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"71.169",
+          "s_scaled":"962.3471210663736" }
+        ]
+      },
+      {
+        "name":"John Nye",
+        "id":"8598",
+        "s_perc":"67.486",
+        "s_scaled":"2656.966912771424",
+        "s_percknown":"67.486",
+        "s_percunknown":"",
+        "points":"890.8879501635924",
+        "rank":"4",
+        "index":"8598",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"72.785",
+          "s_scaled":"900.993835702604" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"true",
+          "percthrown":"false",
+          "s_perc":"65.589",
+          "s_scaled":"854.3817844850412" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"64.085",
+          "s_scaled":"895.8658900411991" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"true",
+          "s_perc":"63.608",
+          "s_scaled":"860.1071870276212" }
+        ]
+      },
+      {
+        "name":"Ray Breton",
+        "id":"8779",
+        "s_perc":"67.500",
+        "s_scaled":"2649.1691010917966",
+        "s_percknown":"67.500",
+        "s_percunknown":"",
+        "points":"888.2733235268689",
+        "rank":"5",
+        "index":"8779",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"69.248",
+          "s_scaled":"857.2147439929549" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"74.299",
+          "s_scaled":"967.8316123907862" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"58.953",
+          "s_scaled":"824.1227447080553" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"true",
+          "percthrown":"true",
+          "s_perc":"53.252",
+          "s_scaled":"720.0769547890615" }
+        ]
+      },
+      {
+        "name":"Dan Weed",
+        "id":"9447",
+        "s_perc":"46.775",
+        "s_scaled":"1889.938210109522",
+        "s_percknown":"46.775",
+        "s_percunknown":"",
+        "points":"633.7012214367645",
+        "rank":"6",
+        "index":"9447",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"true",
+          "percthrown":"true",
+          "s_perc":"27.215",
+          "s_scaled":"336.8977229840232" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"53.181",
+          "s_scaled":"692.7455652634364" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"41.169",
+          "s_scaled":"575.507884642705" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"45.976",
+          "s_scaled":"621.6847602033806" }
+        ]
+      }
+    ]
+  }, 
+  { "class":"Intermediate",
+    "rows":[
+      
+      {
+        "name":"Mike Maljanian",
+        "id":"8769",
+        "s_perc":"81.508",
+        "s_scaled":"3000.0",
+        "s_percknown":"81.508",
+        "s_percunknown":"",
+        "points":"1000.0",
+        "rank":"1",
+        "index":"8769",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"true",
+          "percthrown":"true",
+          "s_perc":"64.945",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"71.581",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"85.249",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"87.695",
+          "s_scaled":"1000.0" }
+        ]
+      }
+    ]
+  }, 
+  { "class":"Advanced",
+    "rows":[
+      
+      {
+        "name":"Steve Bakke",
+        "id":"7970",
+        "s_perc":"74.484",
+        "s_scaled":"3000.0",
+        "s_percknown":"74.484",
+        "s_percunknown":"",
+        "points":"1000.0",
+        "rank":"1",
+        "index":"7970",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"true",
+          "percthrown":"true",
+          "s_perc":"65.154",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"66.086",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"78.779",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"78.586",
+          "s_scaled":"1000.0" }
+        ]
+      },
+      {
+        "name":"Peter Nesbeda",
+        "id":"2396",
+        "s_perc":"58.952",
+        "s_scaled":"2395.4606991186",
+        "s_percknown":"58.952",
+        "s_percunknown":"",
+        "points":"798.4868997062",
+        "rank":"2",
+        "index":"2396",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"56.060",
+          "s_scaled":"860.4261195502071" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"true",
+          "percthrown":"true",
+          "s_perc":"43.143",
+          "s_scaled":"652.8250510551395" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"67.217",
+          "s_scaled":"853.2387012563225" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"53.580",
+          "s_scaled":"681.7958783120706" }
+        ]
+      }
+    ]
+  }, 
+  { "class":"Unlimited",
+    "rows":[
+      
+      {
+        "name":"Tyler McCormack",
+        "id":"6571",
+        "s_perc":"83.525",
+        "s_scaled":"3000.0",
+        "s_percknown":"83.525",
+        "s_percunknown":"",
+        "points":"1000.0",
+        "rank":"1",
+        "index":"6571",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"83.786",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"true",
+          "percthrown":"true",
+          "s_perc":"82.007",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"84.197",
+          "s_scaled":"1000.0" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"82.591",
+          "s_scaled":"1000.0" }
+        ]
+      },
+      {
+        "name":"Seth Dixon",
+        "id":"8134",
+        "s_perc":"72.383",
+        "s_scaled":"2609.7234151867888",
+        "s_percknown":"72.383",
+        "s_percunknown":"",
+        "points":"869.9078050622629",
+        "rank":"2",
+        "index":"8134",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"82.393",
+          "s_scaled":"983.3828613014737" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"81.524",
+          "s_scaled":"994.1136377718569" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"false",
+          "s_perc":"53.232",
+          "s_scaled":"632.2269161134581" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"true",
+          "percthrown":"true",
+          "s_perc":"0.000",
+          "s_scaled":"0.0" }
+        ]
+      }
+    ]
+  }, 
+  { "class":"Seniors",
+    "rows":[
+      
+      {
+        "name":"John Eppling",
+        "id":"8749",
+        "s_perc":"",
+        "s_scaled":"1000.0",
+        "s_percknown":"",
+        "s_percunknown":"",
+        "points":"1000.0",
+        "rank":"1",
+        "index":"8749",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"73.3130081300813" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"76.02642276422765" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"true",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"70.96544715447155" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"73.95325203252033" }
+        ]
+      },
+      {
+        "name":"Andy Dixon",
+        "id":"8453",
+        "s_perc":"",
+        "s_scaled":"986.7558711086838",
+        "s_percknown":"",
+        "s_percunknown":"",
+        "points":"986.7558711086838",
+        "rank":"2",
+        "index":"8453",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"72.39837398373984" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"76.76829268292683" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"true",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"63.98373983739838" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"71.16869918699187" }
+        ]
+      },
+      {
+        "name":"John Lavery",
+        "id":"8619",
+        "s_perc":"",
+        "s_scaled":"932.7771523683202",
+        "s_percknown":"",
+        "s_percunknown":"",
+        "points":"932.7771523683202",
+        "rank":"3",
+        "index":"8619",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"68.6734693877551" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"true",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"63.911564625850346" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"74.16666666666667" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"65.4421768707483" }
+        ]
+      },
+      {
+        "name":"Ray Breton",
+        "id":"8779",
+        "s_perc":"",
+        "s_scaled":"906.8814855270344",
+        "s_percknown":"",
+        "s_percunknown":"",
+        "points":"906.8814855270344",
+        "rank":"4",
+        "index":"8779",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"69.24796747967478" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"74.29878048780488" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"58.95325203252033" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"true",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"53.2520325203252" }
+        ]
+      },
+      {
+        "name":"Peter Nesbeda",
+        "id":"2396",
+        "s_perc":"",
+        "s_scaled":"792.0426417918202",
+        "s_percknown":"",
+        "s_percunknown":"",
+        "points":"792.0426417918202",
+        "rank":"5",
+        "index":"2396",
+        "scores":[
+        
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"56.06041131105398" },
+        { "type":"KNOWN",
+          "round":"1",
+          "sequence":"2",
+          "thrown":"true",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"43.1426735218509" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"1",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"67.2172236503856" },
+        { "type":"KNOWN",
+          "round":"2",
+          "sequence":"2",
+          "thrown":"false",
+          "percthrown":"",
+          "s_perc":"",
+          "s_scaled":"53.57969151670952" }
+        ]
+      }
+    ]
+  } 
+  ]
+}
+</script>
+</html>
